@@ -1,0 +1,46 @@
+.parent-box {
+  display: flex;
+}
+
+.counter {
+  margin: 250px auto;
+  padding: 10px 20px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+}
+
+.button-box {
+  display: flex;
+  margin: 20px auto;
+  width: 200px;
+  justify-content: space-between;
+  padding-top: 100px;
+}
+
+.button {
+  font-size: 35px;
+  border-radius: 5px;
+}
+
+.input-box {
+  padding-top: 20px
+}
+
+.input {
+  font-size: 30px;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  padding-left: 30px;
+}
+
+.error {
+  font-size: 30px;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  padding-left: 30px;
+  color: red;
+}
