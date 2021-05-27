@@ -1,8 +1,9 @@
-import { Container, Grid, Paper } from '@material-ui/core'
-import React, { ChangeEvent } from 'react'
+import { Paper } from '@material-ui/core'
+import { ChangeEvent } from 'react'
 import { useState } from 'react'
 import Counter from './Counter'
 import SettingsCounter from './SettingsCounter'
+import s from './Counter.module.css'
 
 function App() {
 
@@ -49,45 +50,29 @@ function App() {
 
 
   return (
-    <div>
-        <Grid container direction="row" justify="center" alignItems="center">
-          <Grid item>
-            <Paper elevation={3} style={{ padding: "15px" }}>
-              <SettingsCounter
-                maxValueHandler={maxValueHandler}
-                startValueHandler={startValueHandler}
-                setButtonHandler={setButtonHandler}
-                isDisabled={isDisabled}
-                isMistake={isMistake}
-              />
-            </Paper>
-          </Grid>
-          <Grid item>
-            <Paper elevation={3} style={{ padding: "15px" }}>
-              <Counter
-                incValue={incValue}
-                reset={reset}
-                count={count}
-                maxValue={maxValue}
-                isDisabled={isDisabled}
-                counterValue={counterValue}
-                isMistake={isMistake}
-              />
-            </Paper>
-          </Grid>
-        </Grid>
+    <div className={s.main}>
+        <Paper elevation={3} className={s.settings}>
+          <SettingsCounter
+            maxValueHandler={maxValueHandler}
+            startValueHandler={startValueHandler}
+            setButtonHandler={setButtonHandler}
+            isDisabled={isDisabled}
+            isMistake={isMistake}
+          />
+        </Paper>
+        <Paper elevation={3} className={s.counter}>
+          <Counter
+            incValue={incValue}
+            reset={reset}
+            count={count}
+            maxValue={maxValue}
+            isDisabled={isDisabled}
+            counterValue={counterValue}
+            isMistake={isMistake}
+          />
+        </Paper>
     </div>
-    
-  );
+  )
 }
 
-export default App;
-
-// const error = () => {
-//   if (maxValue <= startValue || maxValue < 0 || startValue < 0) {
-//     setMistake(true)
-//   } 
-//   else {
-//     setMistake(false)
-//   } 
-// }
+export default App

@@ -1,6 +1,5 @@
-import { Button, makeStyles, Paper, TextField } from "@material-ui/core"
-import React from "react"
-import './Counter.css'
+import { Button, Paper, TextField } from "@material-ui/core"
+import s from './Counter.module.css'
 
 
 export type CounterPropsType = {
@@ -19,37 +18,33 @@ function Counter (props: CounterPropsType) {
   
   return (
     <div>
-      <div className={'text-field'}>
+      <Paper elevation={3} className={s.textFieldCounter}>
         <TextField
+          className={s.inputCounter}
           helperText={isEqual() ? 'value is equal to the set max value' : ''}
           id="outlined-basic"
           error={isEqual() || props.isMistake}
           label={props.counterValue()}
           type="text" />
-      </div>
-      <div>
-        <Paper elevation={3} className={"button-block"}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={props.incValue}
-            disabled={isEqual() || !props.isDisabled || props.isMistake}>
-            Inc
-            </Button>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={props.reset}
-            disabled={!props.isDisabled || props.isMistake}>
-            Reset
-            </Button>
-        </Paper>
-      </div>
-    </div >
+      </Paper>
+      <Paper elevation={3} className={s.buttonBlock}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={props.incValue}
+          disabled={isEqual() || !props.isDisabled || props.isMistake}>
+          Inc
+          </Button>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={props.reset}
+          disabled={!props.isDisabled || props.isMistake}>
+          Reset
+          </Button>
+      </Paper>
+    </div>
   )
 }
 
 export default Counter
-
-//props.isDisabled ? props.count : "enter value and press \'set\'"
-//<input className={props.count === props.maxValue ? 'error' : ''} type="text" value={props.counterValue()}/>

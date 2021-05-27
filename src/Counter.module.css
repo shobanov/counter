@@ -1,0 +1,56 @@
+
+.main {
+  background-image: linear-gradient(white, gray);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.counter {
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.settings {
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.buttonBlock {
+ height: 35px;
+ margin: 15px;
+ padding: 15px;
+ display: flex;
+ justify-content: space-around;
+ align-self: flex-end;
+}
+
+.textField {
+  height: 40%;
+  margin: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.textFieldCounter {
+  height: 50%;
+  margin: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputCounter {
+  height: 30px;
+}
